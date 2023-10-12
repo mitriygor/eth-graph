@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+
+  # Defining the eth-graph-api service for fetching data from Uniswap
+  eth-graph-api:
+    build:
+      context: ..
+      dockerfile: ./eth-graph-api/eth-graph-api.dockerfile
+    ports:
+      - "3000:3000"
+    restart: always
+    deploy:
+      mode: replicated
+      replicas: 1
+    volumes:
+      - ./../eth-graph-api:/app/eth-graph-api
+      - ./.env:/app/eth-graph-api/.env
+    sysctls:                                       # Kernel parameters to modify by the container
+      - net.ipv4.ip_local_port_range=1024 65535    # Expanding the local port range for the service
+      - net.ipv4.tcp_tw_reuse=1                    # Allow reusing of sockets in TIME_WAIT state for new connections when it is safe from a protocol viewpoint

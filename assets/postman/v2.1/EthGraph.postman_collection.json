@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "5402fc36-ad7a-4027-b994-1d3580f8aaac",
+		"name": "EthGraph",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7700049"
+	},
+	"item": [
+		{
+			"name": "Token::Pools",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1/tokens/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/pools",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"tokens",
+						"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+						"pools"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token::Volume",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1/tokens/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/volume?from=1632960000&to=1633564800",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"tokens",
+						"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+						"volume"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "1632960000"
+						},
+						{
+							"key": "to",
+							"value": "1633564800"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block:Swaps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1/blocks/18319881/swaps",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"blocks",
+						"18319881",
+						"swaps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block:Tokens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1/blocks/18319881/swaps/tokens",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"blocks",
+						"18319881",
+						"swaps",
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
